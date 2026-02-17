@@ -4,13 +4,15 @@ resource "aws_key_pair" "openvpnas" {
 }
 
 resource "aws_instance" "openvpn" {
-  ami                    = data.aws_ami.kavya.id
+  ami                    = "ami-06e5a963b2dadea6f"
+ 
   key_name = aws_key_pair.openvpnas.key_name
   vpc_security_group_ids = [data.aws_ssm_parameter.vpn_sg_id.value]
-  instance_type          = "t2.micro"
-  subnet_id   = local.public_subnet_id
-    associate_public_ip_address = true   # 👈 MUST
-
+  instance_type          = "t3.micro"
+  
+  subnet_id = local.public_subnet_id
+    
+    
   user_data = file("user-data.sh")
   tags = merge(
     var.common_tags,

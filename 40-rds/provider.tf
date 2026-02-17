@@ -9,7 +9,7 @@ terraform {
 
   backend "s3" {
     
-    bucket       = "kavyas-remote-state-dev"
+    bucket       = "divya-82s"
     key          = "kavssyadiv-bastion- rds"
     region       = "us-east-1"
     use_lockfile = true

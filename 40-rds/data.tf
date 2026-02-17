@@ -10,15 +10,9 @@ data "aws_ssm_parameter"  "database_subnet_group_name"  {
     name = "/${var.project_name}/${var.environment}/database_subnet_group_name"
 }
 
-resource "aws_secretsmanager_secret" "db_password" {
-  name = "roboshop/qa/mysql/password"
-}
 
-resource "aws_secretsmanager_secret_version" "db_password_value" {
-  secret_id     = aws_secretsmanager_secret.db_password.id
-  secret_string = jsonencode({
-    username = "admin"
-    password = "ExpenseApp1"
-  })
-}
 
+data "aws_ssm_parameter" "db_password" {
+  name            = "/expense/rds/password"
+  with_decryption = true
+}

@@ -8,19 +8,13 @@ variable "environment" {
 
 variable "common_tags" {
   default = {
-    Name = "roboshop"
+    project_name = "roboshop"
     environment = "qa"
     terraform = "true"
-
   }
 }
 
-variable "zone_id" {
-  default =  "Z04757596NZDGVB9VM0A"
-
-}
 
 variable "domain_name" {
     default = "koti.lat"
 }
-  
