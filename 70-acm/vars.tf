@@ -4,7 +4,7 @@ variable "project_name" {
 
 
 variable "environment" {
-  default = "dev"
+  default = "qa"
 }
 
 variable "common_tags" {
@@ -20,5 +20,5 @@ variable "domain_name" {
 }
 
 variable "zone_id" {
-    default = "Z05104993MTIP8133E6OX"
+    default = "Z04757596NZDGVB9VM0A"
 }

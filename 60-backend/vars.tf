@@ -18,3 +18,8 @@ variable "common_tags" {
 variable "domain_name" {
     default = "koti.lat"
 }
+
+variable "zone_id" {
+  default =  "Z04757596NZDGVB9VM0A"
+
+}

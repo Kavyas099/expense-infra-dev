@@ -1,5 +1,5 @@
 resource "aws_instance" "frontend" {
-  ami                    = data.aws_ami.joindevops.id # golden AMI
+  ami                    = data.aws_ami.kavya.id # golden AMI
   vpc_security_group_ids = [data.aws_ssm_parameter.frontend_sg_id.value]
   instance_type          = "t3.micro"
   subnet_id   = local.public_subnet_id
@@ -135,13 +135,13 @@ resource "aws_autoscaling_group" "frontend" {
 
   tag {
     key                 = "Project"
-    value               = "expense"
+    value               = "roboshop"
     propagate_at_launch = false
   }
 
   tag {
     key                 = "Environment"
-    value               = "dev"
+    value               = "qa"
     propagate_at_launch = false
   }
 }

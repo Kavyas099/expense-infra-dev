@@ -13,3 +13,13 @@ variable "project_name" {
 variable "environment" {
   default = "qa"
 }
+
+
+variable "domain_name" {
+    default = "koti.lat"
+}
+
+variable "zone_id" {
+  default =  "Z04757596NZDGVB9VM0A"
+
+}
