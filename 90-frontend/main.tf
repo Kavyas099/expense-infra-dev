@@ -170,7 +170,7 @@ resource "aws_lb_listener_rule" "frontend" {
 
   condition {
     host_header {
-      values = ["expense-${var.environment}.${var.domain_name}"]
+      values = ["roboshop-${var.environment}.${var.domain_name}"]
     }
   }
 }
